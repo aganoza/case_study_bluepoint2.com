@@ -754,6 +754,22 @@ video {
   background-color: rgb(255 255 255 / 0.9);
 }
 
+.bg-\[\#43c8f5\]\/50 {
+  background-color: rgb(67 200 245 / 0.5);
+}
+
+.bg-\[\#43c8f5\]\/70 {
+  background-color: rgb(67 200 245 / 0.7);
+}
+
+.bg-\[\#43c8f5\]\/60 {
+  background-color: rgb(67 200 245 / 0.6);
+}
+
+.bg-\[\#43c8f5\]\/40 {
+  background-color: rgb(67 200 245 / 0.4);
+}
+
 .bg-\[url\(\'\/images\/bg-for-opacity\.jpg\'\)\] {
   background-image: url('/images/bg-for-opacity.jpg');
 }

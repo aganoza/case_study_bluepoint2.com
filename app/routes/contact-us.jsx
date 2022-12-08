@@ -56,8 +56,8 @@ export default function ContactUs() {
 
   return (
     <div className="grid grid-cols-1 h-full w-full justify-center items-center">
-      <div className="flex flex-col py-8 gap-4 justify-center items-center bg-[#1CA17E]/80 text-center">
-        <h1 className="font-copyLight text-3xl text-white font-bold">
+      <div className="flex flex-col py-8 gap-4 justify-center items-center bg-[#1CA17E]/80 text-center text-white">
+        <h1 className="font-copyLight text-3xl font-bold">
           Every care center needs NAVI
         </h1>
         <img
@@ -67,8 +67,8 @@ export default function ContactUs() {
           alt="Key Logo"
           src="/images/hero-contact-us.webp"
         />
-        <h2 className="font-display text-4xl text-white">Contact Us</h2>
-        <h3 className="font-copyExtraLight text-2xl text-white font-bold">
+        <h2 className="font-display text-4xl">Contact Us</h2>
+        <h3 className="font-copyExtraLight text-2xl font-bold">
           We would love to hear from you!
         </h3>
 
