@@ -16,6 +16,7 @@ export default function Home() {
             </h2>
           </div>
         </section>
+
         <section className="bg-blue-900/80 h-[34rem]">
           <div className="max-w-5xl mx-auto px-8 flex flex-col justify-center items-center h-full">
             <img
@@ -81,6 +82,25 @@ export default function Home() {
                 Video Demo
               </button>
             </a>
+          </div>
+        </section>
+
+        <section className="bg-blue-900/80 h-[34rem]">
+          <div className="max-w-5xl mx-auto px-8 flex flex-col justify-center items-center h-full">
+            <img
+              width="74"
+              height="74"
+              className="mb-2"
+              alt="Key Logo"
+              src="/images/bubble-chat.png"
+            />
+            <h1 className="text-4xl text-white font-display leading-[3rem] mb-6">
+              Better communication starts with NAVI
+            </h1>
+            <h2 className="text-2xl text-white font-copyExtraLight text-center font-bold leading-8 w-full sm:w-3/4">
+              NAVI allows patients to navigate their healthcare appointments and
+              communicate with their care providers from any mobile device.
+            </h2>
           </div>
         </section>
       </Form>

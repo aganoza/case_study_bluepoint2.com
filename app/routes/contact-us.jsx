@@ -1,9 +1,10 @@
 import * as React from "react";
-import { Wrapper } from "@googlemaps/react-wrapper";
-import { AutocompleteSearchInput } from "~/components/Autocomplete";
-import { MapAddressSelector } from "~/components/MapSelector";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { Wrapper } from "@googlemaps/react-wrapper";
+
+import { AutocompleteSearchInput } from "~/components/Autocomplete";
+import { MapAddressSelector } from "~/components/MapSelector";
 
 export const meta = () => ({
   title: "Contact Us | bluepoint2",
