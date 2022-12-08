@@ -18,6 +18,7 @@ module.exports = {
           "sans-serif",
         ],
         copyLight: ["helvetica-w01-light", "helvetica-w02-light", "sans-serif"],
+        sigature: ["mr de haviland", "cursive"],
       },
     },
   },

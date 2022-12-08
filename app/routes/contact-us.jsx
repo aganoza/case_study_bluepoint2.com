@@ -20,7 +20,7 @@ export async function loader() {
 export default function ContactUs() {
   const { GOOGLE_MAPS_APIKEY } = useLoaderData();
 
-  const customerAddress = {
+  const initialAddress = {
     city: "",
     state: "",
     zip: "",
@@ -56,7 +56,7 @@ export default function ContactUs() {
 
   return (
     <div className="grid grid-cols-1 h-full w-full justify-center items-center">
-      <div className="flex flex-col py-4 gap-4 justify-center items-center bg-[#1CA17E]/80 text-center">
+      <div className="flex flex-col py-8 gap-4 justify-center items-center bg-[#1CA17E]/80 text-center">
         <h1 className="font-copyLight text-3xl text-white font-bold">
           Every care center needs NAVI
         </h1>
@@ -72,7 +72,7 @@ export default function ContactUs() {
           We would love to hear from you!
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center items-center text-center bg-white/75 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 justify-center items-center text-center bg-white/75 w-full lg:w-[56rem]">
           <div className="h-32 md:h-52 flex flex-col bg-[#2B388C] justify-around items-center">
             <div className="flex justify-center items-center md:items-end h-24">
               <svg
@@ -152,7 +152,7 @@ export default function ContactUs() {
               <AutocompleteSearchInput
                 ref={addressInputRef}
                 name="streetAddress"
-                defaultValue={customerAddress?.address}
+                defaultValue={initialAddress?.address}
                 setMapSelectedAddressInfo={setSelectedAddressInfo}
                 markerObjRef={markerObjRef}
                 infoWindowObjRef={infoWindowObjRef}
@@ -170,7 +170,7 @@ export default function ContactUs() {
               ref={cityInputRef}
               placeholder=""
               name="city"
-              defaultValue={customerAddress?.city}
+              defaultValue={initialAddress?.city}
             />
           </div>
 
@@ -182,7 +182,7 @@ export default function ContactUs() {
               ref={stateInputRef}
               placeholder=""
               name="state"
-              defaultValue={customerAddress?.state}
+              defaultValue={initialAddress?.state}
             />
           </div>
 
@@ -194,7 +194,7 @@ export default function ContactUs() {
               ref={zipInputRef}
               placeholder=""
               name="zip"
-              defaultValue={customerAddress?.zip}
+              defaultValue={initialAddress?.zip}
             />
           </div>
         </div>
