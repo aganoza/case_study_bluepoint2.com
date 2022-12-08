@@ -1,19 +1,18 @@
 import * as React from "react";
 import { Form, Link } from "@remix-run/react";
 
-export default function ContactUs() {
+export default function Home() {
   return (
     <div>
       <Form method="post">
-        {/* <section className="bg-[url('/images/hero.jpg')] bg-cover"> */}
         <section className="bg-[url('/images/hero-1.webp')] bg-no-repeat bg-center h-[33rem]">
-          <div className="max-w-5xl mx-auto px-8">
-            {/* w-48 sm:w-80 */}
+          <div className="max-w-5xl mx-auto p-8">
+            {/* w-48 sm:w-80*/}
             <h1 className="text-4xl text-[#2B388C] font-display w-80 leading-[3rem] mb-6">
               We’re the company that's changing the way you navigate your
               healthcare.
             </h1>
-            <h2 className="text-2xl text-[#1CA17E] font-copy font-bold leading-8 w-28 sm:w-72">
+            <h2 className="text-2xl text-[#1CA17E] copyExtraLight font-bold leading-8 w-28 sm:w-72">
               Innovative solutions that create a comfortable, intuitive patient
               experience.
             </h2>
@@ -31,7 +30,7 @@ export default function ContactUs() {
             <h1 className="text-4xl text-white font-display leading-[3rem] mb-6">
               Communication is the key.
             </h1>
-            <h2 className="text-2xl text-white font-copy font-bold leading-8 w-full sm:w-3/4">
+            <h2 className="text-2xl text-white copyExtraLight text-center font-bold leading-8 w-full sm:w-3/4">
               We believe that better communication leads to better outcomes in
               healthcare. Our passion and mission are to create better
               communication between patients and care providers – it’s that
@@ -73,7 +72,6 @@ export default function ContactUs() {
             </Link>
           </div>
         </section>
-        {/* <button type="submit">submit</button> */}
       </Form>
     </div>
   );

@@ -10,7 +10,7 @@ module.exports = {
           "helvetica-lt-w10-bold",
           "sans-serif",
         ],
-        copy: ["worksans-extralight", "work sans", "sans-serif"],
+        copyExtraLight: ["worksans-extralight", "work sans", "sans-serif"],
         copy2: [
           "helvetica-w01-roman",
           "helvetica-w02-roman",
