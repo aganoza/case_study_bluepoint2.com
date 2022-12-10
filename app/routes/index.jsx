@@ -90,12 +90,6 @@ export default function Home() {
   return (
     <div>
       <Form method="post">
-        <section className="bg-secondary/90">
-          <div className="relative max-w-4xl mx-auto p-8">
-            <Slider slides={SLIDES} />
-          </div>
-        </section>
-
         <section className="bg-[url('/images/hero-1.webp')] bg-no-repeat bg-center bg-cover min-h-[33rem]">
           <div className="max-w-5xl mx-auto p-8">
             <h1 className="text-4xl text-primary font-display w-80 leading-[3rem] mb-6">
@@ -174,6 +168,12 @@ export default function Home() {
                 Video Demo
               </button>
             </a>
+          </div>
+        </section>
+
+        <section className="bg-secondary/90">
+          <div className="relative max-w-4xl mx-auto p-8">
+            <Slider slides={SLIDES} />
           </div>
         </section>
 

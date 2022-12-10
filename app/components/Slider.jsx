@@ -171,8 +171,6 @@ function Slider({
           <Slide
             key={index}
             id={`image-${index}`}
-            // image={image.img}
-            // title={image.title}
             isCurrent={index === state.currentIndex}
             takeFocus={state.takeFocus}
             children={image.content}
