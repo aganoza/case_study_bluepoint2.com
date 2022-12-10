@@ -1,6 +1,7 @@
 import { Form } from "@remix-run/react";
 
-import { Slider } from "~/components/Slider";
+import { Slider, Button } from "~/components";
+
 import styles from "~/components/Slider.css";
 
 export function links() {
@@ -35,12 +36,9 @@ function InTheNewsSlide({
         />
 
         <a className="md:col-start-1" href={callToActionUrl} rel="noreferrer">
-          <button
-            type="button"
-            className="bg-secondary hover:bg-secondary-dark text-white max-h-full inline font-normal min-w-14 m-0 px-7 py-2 rounded-3xl border-2"
-          >
+          <Button variant="secondary" className="border-2">
             {callToActionText}
-          </button>
+          </Button>
         </a>
       </div>
     </div>
@@ -161,12 +159,7 @@ export default function Home() {
               href="https://www.bluepoint2.com/navi-demo-video"
               rel="noreferrer"
             >
-              <button
-                type="button"
-                className="bg-primary hover:bg-secondary text-white max-h-full inline font-normal min-w-14 m-0 px-7 py-2 rounded-3xl"
-              >
-                Video Demo
-              </button>
+              <Button variant="primary">Video Demo</Button>
             </a>
           </div>
         </section>
@@ -299,9 +292,9 @@ export default function Home() {
                   src="https://player.vimeo.com/video/386648582?h=28677dd262&title=0&byline=0&portrait=0"
                   width="426"
                   height="240"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                   title="NAVI Introduction and Overview"
                 />
               </div>
@@ -312,12 +305,9 @@ export default function Home() {
                   organization.
                 </h1>
                 <a href="https://www.bluepoint2.com/demo" rel="noreferrer">
-                  <button
-                    type="button"
-                    className="bg-secondary hover:bg-secondary-dark text-white max-h-full inline font-normal min-w-14 m-0 px-7 py-2 rounded-3xl border-2"
-                  >
+                  <Button variant="secondary" className="border-2">
                     Request a live demo
-                  </button>
+                  </Button>
                 </a>
               </div>
             </div>
