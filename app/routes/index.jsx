@@ -17,8 +17,8 @@ function InTheNewsSlide({
 }) {
   return (
     <div className="flex gap-4 justify-center">
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-center justify-items-center items-center gap-8 max-w-md">
-        <h2 className="text-4xl text-white font-display justify-self-start">
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-center justify-items-center items-center gap-8 max-w-md md:max-w-full">
+        <h2 className="text-4xl text-white font-display md:justify-self-start">
           In The News
         </h2>
         <p className="font-copyLight text-xl text-white text-center md:text-start md:col-start-1">

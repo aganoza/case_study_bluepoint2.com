@@ -1820,6 +1820,10 @@ video {
     max-width: 48rem;
   }
 
+  .md\:max-w-full {
+    max-width: 100%;
+  }
+
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -1846,6 +1850,10 @@ video {
 
   .md\:items-end {
     align-items: flex-end;
+  }
+
+  .md\:justify-self-start {
+    justify-self: start;
   }
 
   .md\:p-20 {
