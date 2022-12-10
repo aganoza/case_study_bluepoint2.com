@@ -626,6 +626,18 @@ video {
   height: 11rem;
 }
 
+.h-\[12\.5rem\] {
+  height: 12.5rem;
+}
+
+.h-\[10rem\] {
+  height: 10rem;
+}
+
+.h-\[11rem\] {
+  height: 11rem;
+}
+
 .max-h-full {
   max-height: 100%;
 }
@@ -660,6 +672,18 @@ video {
 
 .w-\[13\.5rem\] {
   width: 13.5rem;
+}
+
+.w-\[12\.5rem\] {
+  width: 12.5rem;
+}
+
+.w-\[10rem\] {
+  width: 10rem;
+}
+
+.w-\[11rem\] {
+  width: 11rem;
 }
 
 .max-w-xs {

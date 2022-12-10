@@ -258,7 +258,7 @@ export default function Home() {
                 inefficient communications.
               </p>
 
-              <div className="flex place-items-center w-[13.5rem] h-[13.5rem] md:w-[26rem] md:h-[26rem] p-4 md:p-20 rounded-full border-8 border-white bg-primary ">
+              <div className="flex place-items-center w-[11rem] h-[11rem] md:w-[26rem] md:h-[26rem] p-4 md:p-20 rounded-full border-8 border-white bg-primary ">
                 <p className="text-white text-sm md:text-2xl text-center">
                   <span className="font-display">Communication</span>
                   <br />
