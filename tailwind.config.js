@@ -20,6 +20,12 @@ module.exports = {
         copyLight: ["helvetica-w01-light", "helvetica-w02-light", "sans-serif"],
         sigature: ["mr de haviland", "cursive"],
       },
+      colors: {
+        primary: "#2B388C",
+        secondary: "#1CA17E",
+        "secondary-dark": "#157a58",
+        info: "#43c8f5",
+      },
     },
   },
   plugins: [],
