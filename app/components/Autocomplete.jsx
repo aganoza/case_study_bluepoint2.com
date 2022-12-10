@@ -165,11 +165,11 @@ const AutocompleteSearchInput = React.forwardRef(
         placeholder="123 Washington Avenue"
         className={className}
         {...rest}
-        iconElement={
-          pickAddress ? (
-            <div className="text-error">Can't find this address on a map</div>
-          ) : null
-        }
+        // iconElement={
+        //   pickAddress ? (
+        //     <div className="text-error">Can't find this address on a map</div>
+        //   ) : null
+        // }
       />
     );
   }
