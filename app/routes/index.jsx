@@ -7,48 +7,76 @@ export function links() {
   return [{ rel: "stylesheet", href: styles }];
 }
 
+function InTheNewsSlide({
+  description = "",
+  hero = "images/slider-In-the-News-1.webp",
+  heroClassname = "",
+  heroAlt = "Slide",
+  callToActionUrl = "https://www.bluepoint2.com/navi-demo-video",
+  callToActionText = "Read the Story",
+}) {
+  return (
+    <div className="flex gap-4 justify-center">
+      <div className="grid grid-cols-1 justify-center justify-items-center gap-8 max-w-md">
+        <h2 className="text-4xl text-white font-display">In The News</h2>
+        <p className="font-copyLight text-xl text-white text-center md:text-start">
+          {description}
+        </p>
+
+        <img
+          className={"shadow-lg shadow-black/50 " + heroClassname}
+          src={hero}
+          alt={heroAlt}
+        />
+
+        <a href={callToActionUrl} rel="noreferrer">
+          <button
+            type="button"
+            className="bg-secondary hover:bg-secondary-dark text-white max-h-full inline font-normal min-w-14 m-0 px-7 py-2 rounded-3xl border-2"
+          >
+            {callToActionText}
+          </button>
+        </a>
+      </div>
+    </div>
+  );
+}
+
 const SLIDES = [
   {
-    img: "images/hero-90-percent.webp",
-    title: "Lagoon Nebula (Visible-light View)",
     content: (
-      <p>
-        At the center of the photo, a monster young star 200,000 times brighter
-        than our Sun is blasting powerful ultraviolet radiation and
-        hurricane-like stellar winds, carving out a fantasy landscape of ridges,
-        cavities, and mountains of gas and dust.
-      </p>
+      <InTheNewsSlide
+        description="Bluepoint2's product NAVI received The Healthcare Tech Outlook Top 10 Patient Communication Solution Providers of 2020. Click the button below to read the story."
+        hero="images/slider-In-the-News-1.webp"
+        heroClassname="rotate-[8deg]"
+        heroAlt="First Slide In the News"
+        callToActionUrl="https://www.bluepoint2.com/navi-demo-video"
+        callToActionText="Read the Story"
+      />
     ),
   },
   {
-    img: "images/hero-90-percent.webp",
-    title: "Bubble Nebula (NGC 7635)",
     content: (
-      <p>
-        For the 26th birthday of NASA's Hubble Space Telescope, astronomers are
-        highlighting a Hubble image of an enormous bubble being blown into space
-        by a super-hot, massive star. The Hubble image of the Bubble Nebula, or
-        NGC 7635, was chosen to mark the 26th anniversary of the launch of
-        Hubble into Earth orbit by the STS-31 space shuttle crew on April 24,
-        1990.
-      </p>
+      <InTheNewsSlide
+        description="Jon Adrian was quoted in the recent issue of Net Solution's article
+    titled 8 'Digital Transformation Trends that will Steer 2020.' Click
+    the button below to read the story."
+        hero="images/slider-In-the-News-2.webp"
+        heroAlt="Second Slide In the News"
+        callToActionUrl="https://www.bluepoint2.com/navi-demo-video"
+        callToActionText="Read the Story"
+      />
     ),
   },
   {
-    img: "images/hero-90-percent.webp",
-    title: "Eagle Nebula",
     content: (
-      <p>
-        The Eagle Nebula pillars are bathed in the blistering ultraviolet light
-        from a grouping of young, massive stars located off the top of the
-        image. Streamers of gas can be seen bleeding off the pillars as the
-        intense radiation heats and evaporates it into space. Denser regions of
-        the pillars are shadowing material beneath them from the powerful
-        radiation. Stars are being born deep inside the pillars, which are made
-        of cold hydrogen gas laced with dust. The pillars are part of a small
-        region of the Eagle Nebula, a vast star-forming region 6,500 light-years
-        from Earth.
-      </p>
+      <InTheNewsSlide
+        description="Bluepoint2 is honored to have been named 'A Top Emerging Company to watch for its innovation' by KLAS."
+        hero="images/slider-In-the-News-3.webp"
+        heroAlt="Third Slide In the News"
+        callToActionUrl="http://demo-vp.herokuapp.com/src/patient/landing-bio.html"
+        callToActionText="Request Whitepaper"
+      />
     ),
   },
 ];
@@ -57,8 +85,8 @@ export default function Home() {
   return (
     <div>
       <Form method="post">
-        <section className="relative bg-secondary/90">
-          <div className=" max-w-7xl mx-auto p-8 h-[30rem]">
+        <section className="bg-secondary/90">
+          <div className="relative max-w-4xl mx-auto p-8">
             <Slider slides={SLIDES} />
           </div>
         </section>

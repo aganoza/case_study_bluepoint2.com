@@ -7,3 +7,4 @@
 1. Move svgs to components
 
 1. copy font-copyLight text-xl
+1. Make Button

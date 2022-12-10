@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const SLIDE_DURATION = 3000;
+const SLIDE_DURATION = 4000;
 
 const useProgress = (animate, time) => {
   let [progress, setProgress] = React.useState(0);
@@ -26,14 +26,14 @@ const useProgress = (animate, time) => {
 };
 
 function Carousel(props) {
-  return <section className="Carousel" {...props} />;
+  return <section {...props} />;
 }
 
 function Slides(props) {
-  return <ul {...props} />;
+  return <ul className="Slides" {...props} />;
 }
 
-function Slide({ isCurrent, takeFocus, image, id, title, children }) {
+function Slide({ isCurrent, takeFocus, id, children }) {
   const ref = React.useRef();
 
   React.useEffect(() => {
@@ -49,16 +49,8 @@ function Slide({ isCurrent, takeFocus, image, id, title, children }) {
       tabIndex="-1"
       aria-labelledby={id}
       className="Slide"
-      style={{
-        // backgroundImage: `url(${image})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
     >
-      <div className="SlideContent">
-        <h2 id={id}>{title}</h2>
-        {children}
-      </div>
+      {children}
     </li>
   );
 }
@@ -81,8 +73,10 @@ function Controls(props) {
   return <div className="Controls" {...props} />;
 }
 
-function IconButton(props) {
-  return <button type="button" {...props} className="IconButton" />;
+function IconButton({ className = "", ...props }) {
+  return (
+    <button type="button" {...props} className={"IconButton " + className} />
+  );
 }
 
 function ProgressBar({ animate, time }) {
@@ -95,16 +89,10 @@ function ProgressBar({ animate, time }) {
   );
 }
 
-function SpacerGif({ width }) {
-  return <div style={{ display: "inline-block", width }} />;
-}
-
 function Slider({
   slides = [
     {
-      img: "",
-      title: "",
-      content: "",
+      content: <div></div>,
     },
   ],
 }) {
@@ -152,7 +140,7 @@ function Slider({
     },
     {
       currentIndex: 0,
-      isPlaying: false,
+      isPlaying: true,
       takeFocus: false,
     }
   );
@@ -179,27 +167,14 @@ function Slider({
           <Slide
             key={index}
             id={`image-${index}`}
-            image={image.img}
-            title={image.title}
+            // image={image.img}
+            // title={image.title}
             isCurrent={index === state.currentIndex}
             takeFocus={state.takeFocus}
             children={image.content}
           />
         ))}
       </Slides>
-
-      <SlideNav>
-        {slides.map((slide, index) => (
-          <SlideNavItem
-            key={index}
-            isCurrent={index === state.currentIndex}
-            aria-label={`Slide ${index + 1}`}
-            onClick={() => {
-              dispatch({ type: "GOTO", index });
-            }}
-          />
-        ))}
-      </SlideNav>
 
       <Controls>
         {state.isPlaying ? (
@@ -210,12 +185,12 @@ function Slider({
             }}
             children={
               <svg
-                fill="#fff"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
                 className="w-6 h-6"
+                fill="#fff"
               >
                 <path
                   strokeLinecap="round"
@@ -249,65 +224,72 @@ function Slider({
             }
           />
         )}
-        <SpacerGif width="10px" />
         <IconButton
+          className="ControlPrevious"
           aria-label="Previous Slide"
           onClick={() => {
             dispatch({ type: "PREV" });
           }}
           children={
             <svg
-              fill="#fff"
               xmlns="http://www.w3.org/2000/svg"
+              fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
-              stroke="currentColor"
+              stroke="#fff"
               className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M21 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953l7.108-4.062A1.125 1.125 0 0121 8.688v8.123zM11.25 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953L9.567 7.71a1.125 1.125 0 011.683.977v8.123z"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
               />
             </svg>
           }
         />
         <IconButton
+          className="ControlForward"
           aria-label="Next Slide"
           onClick={() => {
             dispatch({ type: "NEXT" });
           }}
           children={
             <svg
-              fill="#fff"
               xmlns="http://www.w3.org/2000/svg"
+              fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
-              stroke="currentColor"
+              stroke="#fff"
               className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M3 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062A1.125 1.125 0 013 16.81V8.688zM12.75 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062a1.125 1.125 0 01-1.683-.977V8.688z"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
               />
             </svg>
           }
         />
       </Controls>
 
+      <SlideNav>
+        {slides.map((slide, index) => (
+          <SlideNavItem
+            key={index}
+            isCurrent={index === state.currentIndex}
+            aria-label={`Slide ${index + 1}`}
+            onClick={() => {
+              dispatch({ type: "GOTO", index });
+            }}
+          />
+        ))}
+      </SlideNav>
+
       <ProgressBar
         key={state.currentIndex + state.isPlaying}
         time={SLIDE_DURATION}
         animate={state.isPlaying}
       />
-
-      {/* <VisuallyHidden>
-        <Alert>
-          Item {state.currentIndex + 1} of{" "}
-          {slides.length}
-        </Alert>
-      </VisuallyHidden> */}
     </Carousel>
   );
 }
