@@ -17,19 +17,24 @@ function InTheNewsSlide({
 }) {
   return (
     <div className="flex gap-4 justify-center">
-      <div className="grid grid-cols-1 justify-center justify-items-center gap-8 max-w-md">
-        <h2 className="text-4xl text-white font-display">In The News</h2>
-        <p className="font-copyLight text-xl text-white text-center md:text-start">
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-center justify-items-center items-center gap-8 max-w-md">
+        <h2 className="text-4xl text-white font-display justify-self-start">
+          In The News
+        </h2>
+        <p className="font-copyLight text-xl text-white text-center md:text-start md:col-start-1">
           {description}
         </p>
 
         <img
-          className={"shadow-lg shadow-black/50 " + heroClassname}
+          className={
+            "md:col-start-2 md:col-span-2 md:row-start-1 md:row-end-4  shadow-lg shadow-black/50 " +
+            heroClassname
+          }
           src={hero}
           alt={heroAlt}
         />
 
-        <a href={callToActionUrl} rel="noreferrer">
+        <a className="md:col-start-1" href={callToActionUrl} rel="noreferrer">
           <button
             type="button"
             className="bg-secondary hover:bg-secondary-dark text-white max-h-full inline font-normal min-w-14 m-0 px-7 py-2 rounded-3xl border-2"
