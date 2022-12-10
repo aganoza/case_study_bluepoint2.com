@@ -73,10 +73,14 @@ function Controls(props) {
   return <div className="Controls" {...props} />;
 }
 
-function IconButton({ className = "", ...props }) {
-  return (
-    <button type="button" {...props} className={"IconButton " + className} />
-  );
+// function IconButton({ className = "", ...props }) {
+//   return (
+//     <button type="button" {...props} className={"IconButton " + className} />
+//   );
+// }
+
+function IconButton({ className = "", ...rest }) {
+  return <button type="button" {...rest} className="IconButton" />;
 }
 
 function ProgressBar({ animate, time }) {
